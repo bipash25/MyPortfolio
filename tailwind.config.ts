@@ -10,8 +10,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        body: ['Inter', 'sans-serif'],
-        headline: ['Space Grotesk', 'sans-serif'],
+        body: ['Poppins', 'sans-serif'], // Updated
+        headline: ['Poppins', 'sans-serif'], // Updated, using Poppins for headings too for consistency with image
         code: ['monospace'],
       },
       colors: {
@@ -88,10 +88,20 @@ export default {
             height: '0',
           },
         },
+        fadeIn: { // Added from globals.css for completeness if needed here
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0px)' },
+        },
+        scaleUp: {
+          '0%': { transform: 'scale(0.95)', opacity: '0.8' },
+          '100%': { transform: 'scale(1)', opacity: '1'},
+        }
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
+        'fadeIn': 'fadeIn 0.5s ease-out forwards', // Added
+        'scaleUp': 'scaleUp 0.3s ease-out forwards', // Added
       },
     },
   },
