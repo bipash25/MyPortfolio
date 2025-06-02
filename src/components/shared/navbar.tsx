@@ -52,14 +52,14 @@ export function Navbar() {
           <NavLinks />
           <Button asChild size="sm" className="shadow-md hover:shadow-lg transition-shadow bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6">
             <Link href="/contact">
-              HIRE ME
+              CONTACT ME
             </Link>
           </Button>
         </div>
 
         <div className="md:hidden flex items-center">
           <Button asChild size="sm" variant="default" className="mr-2 rounded-full px-4 text-xs">
-             <Link href="/contact">HIRE ME</Link>
+             <Link href="/contact">CONTACT ME</Link>
           </Button>
           <Sheet>
             <SheetTrigger asChild>
@@ -77,7 +77,7 @@ export function Navbar() {
                 <NavLinks mobile />
                  <Button asChild size="lg" className="w-full mt-8 shadow-md hover:shadow-lg transition-shadow bg-primary text-primary-foreground hover:bg-primary/90 rounded-md">
                     <Link href="/contact">
-                      HIRE ME
+                      CONTACT ME
                     </Link>
                   </Button>
               </div>
