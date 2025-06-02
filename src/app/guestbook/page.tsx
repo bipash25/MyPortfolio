@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { PageWrapper } from '@/components/shared/page-wrapper';
 import { SectionTitle } from '@/components/shared/section-title';
 import { GuestbookForm } from '@/components/guestbook/guestbook-form';
@@ -8,23 +8,27 @@ import { GuestbookList } from '@/components/guestbook/guestbook-list';
 import type { GuestbookEntry } from '@/types';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 
-const initialEntries: GuestbookEntry[] = [
+const generateInitialEntries = (): GuestbookEntry[] => [
   {
     id: '1',
-    name: 'Alice Wonderland',
-    message: 'Loved browsing your portfolio, Bipro! Very impressive work.',
-    timestamp: new Date(Date.now() - 1000 * 60 * 60 * 2), // 2 hours ago
+    name: 'Fellow Coder',
+    message: 'Hey Bipro! Cool portfolio, keep up the great learning journey!',
+    timestamp: new Date(Date.now() - 1000 * 60 * 60 * 3), // 3 hours ago
   },
   {
     id: '2',
-    name: 'Bob The Builder',
-    message: 'Great projects and insightful blog posts. Keep up the fantastic work!',
-    timestamp: new Date(Date.now() - 1000 * 60 * 60 * 24), // 1 day ago
+    name: 'Tech Enthusiast',
+    message: 'Love your passion for development. Excited to see what you build next!',
+    timestamp: new Date(Date.now() - 1000 * 60 * 60 * 28), // 28 hours ago
   },
 ];
 
 export default function GuestbookPage() {
-  const [entries, setEntries] = useState<GuestbookEntry[]>(initialEntries);
+  const [entries, setEntries] = useState<GuestbookEntry[]>([]);
+
+  useEffect(() => {
+    setEntries(generateInitialEntries());
+  }, []);
 
   const handleAddEntry = (newEntry: GuestbookEntry) => {
     setEntries((prevEntries) => [newEntry, ...prevEntries]);
@@ -36,7 +40,7 @@ export default function GuestbookPage() {
       
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="md:col-span-1">
-          <Card className="shadow-xl sticky top-24"> {/* Sticky for form on larger screens */}
+          <Card className="shadow-xl sticky top-24">
             <CardHeader>
               <CardTitle className="font-headline text-2xl text-primary">Sign My Guestbook</CardTitle>
               <CardDescription>Your comments are appreciated!</CardDescription>
@@ -49,7 +53,7 @@ export default function GuestbookPage() {
 
         <div className="md:col-span-2">
           <h3 className="font-headline text-2xl text-primary mb-4">Recent Entries</h3>
-          <GuestbookList entries={entries} />
+          {entries.length > 0 ? <GuestbookList entries={entries} /> : <p className="text-muted-foreground">Loading entries...</p>}
         </div>
       </div>
     </PageWrapper>

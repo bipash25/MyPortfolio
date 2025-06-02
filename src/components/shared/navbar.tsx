@@ -5,16 +5,15 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Button } from '@/components/ui/button';
-import { Menu, Palette } from 'lucide-react'; // Changed CodeXml to Palette
+import { Menu, CodeXml } from 'lucide-react'; 
 import { cn } from '@/lib/utils';
 
-// Updated navItems based on the image
 const navItems = [
   { href: '/', label: 'Home' },
   { href: '/about', label: 'About' },
-  { href: '/services', label: 'Services' }, // Added Services
   { href: '/projects', label: 'Projects' },
-  // Removed Blog, Contact, Guestbook for closer match to image's simplicity in nav
+  { href: '/blog', label: 'Blog' }, 
+  { href: '/guestbook', label: 'Guestbook' },
 ];
 
 export function Navbar() {
@@ -22,7 +21,7 @@ export function Navbar() {
 
   const NavLinks = ({ mobile = false }: { mobile?: boolean }) => (
     <nav className={cn(
-      "flex items-center gap-x-6 lg:gap-x-8", // Increased gap slightly
+      "flex items-center gap-x-6 lg:gap-x-8", 
       mobile ? "flex-col gap-y-4 pt-8" : "hidden md:flex"
     )}>
       {navItems.map((item) => (
@@ -45,8 +44,8 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 max-w-screen-xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-2 group">
-          <Palette className="h-7 w-7 text-primary transition-transform group-hover:rotate-[15deg]" /> {/* Changed Icon */}
-          <span className="font-headline text-xl font-bold text-primary">Portfolio</span> {/* Changed Text */}
+          <CodeXml className="h-7 w-7 text-primary transition-transform group-hover:rotate-[5deg]" /> 
+          <span className="font-headline text-xl font-bold text-primary">BIPRODEEP</span> 
         </Link>
         
         <div className="hidden md:flex items-center gap-x-6 lg:gap-x-8">
@@ -72,8 +71,8 @@ export function Navbar() {
             <SheetContent side="right" className="w-[300px] sm:w-[320px]">
               <div className="p-4">
                 <Link href="/" className="mb-8 flex items-center gap-2 group">
-                  <Palette className="h-7 w-7 text-primary" />
-                  <span className="font-headline text-xl font-bold text-primary">Portfolio</span>
+                  <CodeXml className="h-7 w-7 text-primary" />
+                  <span className="font-headline text-xl font-bold text-primary">BIPRODEEP</span>
                 </Link>
                 <NavLinks mobile />
                  <Button asChild size="lg" className="w-full mt-8 shadow-md hover:shadow-lg transition-shadow bg-primary text-primary-foreground hover:bg-primary/90 rounded-md">

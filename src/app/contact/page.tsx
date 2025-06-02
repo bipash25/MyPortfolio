@@ -15,13 +15,13 @@ const contactDetails = [
   {
     icon: Phone,
     label: 'Phone (Optional)',
-    value: '+1 (555) 123-4567',
+    value: '+1 (555) 123-4567', // Keep as placeholder or update if Biprodeep wants to share
     href: 'tel:+15551234567',
   },
   {
     icon: MapPin,
     label: 'Location',
-    value: 'Bengaluru, India (Open to remote)',
+    value: 'Bengaluru, India (Open to remote opportunities)', // Updated to reflect openness
   },
 ];
 
@@ -35,7 +35,7 @@ const socialLinks = [
   {
     icon: Linkedin,
     label: 'LinkedIn',
-    href: 'https://linkedin.com/in/biprodeep',
+    href: 'https://linkedin.com/in/biprodeep', // Assuming a LinkedIn profile exists or will be created
     username: 'in/biprodeep',
   },
 ];
@@ -43,7 +43,7 @@ const socialLinks = [
 export default function ContactPage() {
   return (
     <PageWrapper>
-      <SectionTitle title="Get In Touch" subtitle="I'd love to hear from you! Whether you have a question, a project idea, or just want to connect." />
+      <SectionTitle title="Get In Touch" subtitle="I'd love to hear from you! Whether you have a question, an idea for collaboration, or just want to connect." />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         <Card className="shadow-xl">

@@ -9,50 +9,50 @@ import Image from 'next/image';
 const blogPosts = [
   {
     id: 'post-1',
-    title: 'The Future of Web Development in 2024 and Beyond',
+    title: 'My Journey into Web Development: First Steps',
     date: 'October 26, 2023',
-    tags: ['Web Development', 'Future Tech', 'Trends'],
+    tags: ['Web Development', 'Learning', 'Beginner'],
     imageUrl: 'https://placehold.co/600x400.png',
-    dataAiHint: 'futuristic technology',
-    excerpt: 'Exploring upcoming trends and technologies shaping the web, from AI integration to decentralized applications. What skills should developers focus on?',
-    readTime: '7 min read',
+    dataAiHint: 'coding screen learning',
+    excerpt: 'Sharing my initial experiences and challenges as I started learning web development. Key takeaways and resources that helped me.',
+    readTime: '5 min read',
   },
   {
     id: 'post-2',
-    title: 'Mastering React Hooks: A Deep Dive into useState and useEffect',
+    title: 'Understanding React Hooks: A Student Perspective',
     date: 'September 15, 2023',
-    tags: ['React', 'JavaScript', 'Tutorial'],
+    tags: ['React', 'JavaScript', 'Student Diary'],
     imageUrl: 'https://placehold.co/600x400.png',
-    dataAiHint: 'code screen',
-    excerpt: 'A comprehensive guide to understanding and using React Hooks effectively. This post covers the fundamentals of useState and useEffect with practical examples.',
-    readTime: '10 min read',
+    dataAiHint: 'react code abstract',
+    excerpt: 'A simplified explanation of React Hooks like useState and useEffect from the perspective of someone currently learning them. Practical examples from my projects.',
+    readTime: '7 min read',
   },
   {
     id: 'post-3',
-    title: 'Building Accessible Web Applications: A Practical Guide',
+    title: 'Why I Chose to Learn Next.js for My Portfolio',
     date: 'August 02, 2023',
-    tags: ['Accessibility', 'Web Standards', 'UX'],
+    tags: ['Next.js', 'Portfolio', 'Tech Choices'],
     imageUrl: 'https://placehold.co/600x400.png',
-    dataAiHint: 'inclusive design',
-    excerpt: 'Learn the core principles of web accessibility (WCAG) and how to implement them in your projects to create inclusive experiences for all users.',
-    readTime: '8 min read',
+    dataAiHint: 'decision path choice',
+    excerpt: 'Discussing the reasons behind selecting Next.js for building my personal portfolio and the benefits I anticipate as a developing programmer.',
+    readTime: '6 min read',
   },
   {
     id: 'post-4',
-    title: 'Optimizing Next.js Applications for Performance',
+    title: 'Exploring the World of Open Source as a Student',
     date: 'July 21, 2023',
-    tags: ['Next.js', 'Performance', 'Optimization'],
+    tags: ['Open Source', 'Community', 'Learning'],
     imageUrl: 'https://placehold.co/600x400.png',
-    dataAiHint: 'speed fast',
-    excerpt: 'Discover various techniques to boost the performance of your Next.js applications, including image optimization, code splitting, and server-side rendering strategies.',
-    readTime: '12 min read',
+    dataAiHint: 'community collaboration people',
+    excerpt: 'My thoughts on the importance of open source for students, how to get involved, and what I hope to contribute in the future.',
+    readTime: '8 min read',
   },
 ];
 
 export default function BlogPage() {
   return (
     <PageWrapper>
-      <SectionTitle title="My Blog" subtitle="Technical Insights, Tutorials, and Musings" />
+      <SectionTitle title="My Blog" subtitle="Sharing My Learning Journey and Tech Discoveries" />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {blogPosts.map((post) => (
           <Card key={post.id} id={post.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
@@ -61,8 +61,8 @@ export default function BlogPage() {
                 src={post.imageUrl}
                 alt={post.title}
                 width={600}
-                height={300} // Adjusted height for blog post images
-                className="w-full h-48 object-cover" // Fixed height for consistency
+                height={300} 
+                className="w-full h-48 object-cover" 
                 data-ai-hint={post.dataAiHint}
               />
             </CardHeader>
@@ -96,7 +96,6 @@ export default function BlogPage() {
       </div>
       {/* Note: Individual blog post pages ([slug]/page.tsx) are not implemented in this scope. 
           Links currently point to /blog/[id] which would 404. 
-          For a real blog, these would lead to actual post pages.
           For now, they could link to /blog#post-id to scroll on the same page if desired.
       */}
     </PageWrapper>
