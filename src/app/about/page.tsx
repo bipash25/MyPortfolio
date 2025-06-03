@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { PageWrapper } from '@/components/shared/page-wrapper';
 import { SectionTitle } from '@/components/shared/section-title';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { GraduationCap, Heart, Lightbulb, MapPinned, Sparkles, LaptopCode, Brain } from 'lucide-react';
+import { GraduationCap, Heart, Lightbulb, MapPinned, Sparkles } from 'lucide-react';
 import { DecorativeBlob, blobPath1, blobPath2, blobPath3 } from '@/components/shared/decorative-blob';
 
 const skills = [
@@ -20,8 +20,8 @@ const skills = [
 export default function AboutPage() {
   return (
     <PageWrapper className="relative overflow-hidden">
-      <DecorativeBlob pathD={blobPath1} className="top-0 -left-1/4 w-96 h-96 opacity-15 transform rotate-45" />
-      <DecorativeBlob pathD={blobPath3} className="bottom-0 -right-1/4 w-80 h-80 opacity-10 transform -rotate-30" />
+      <DecorativeBlob pathD={blobPath1} className="top-0 -left-1/4 w-96 h-96 opacity-15 dark:opacity-10 transform rotate-45" />
+      <DecorativeBlob pathD={blobPath3} className="bottom-0 -right-1/4 w-80 h-80 opacity-10 dark:opacity-5 transform -rotate-30" />
 
       <SectionTitle title="About Me" subtitle="My Story, Skills, and Aspirations" />
 
@@ -32,8 +32,7 @@ export default function AboutPage() {
             alt="Biprodeep Nath - Aspiring Developer"
             width={300}
             height={400}
-            className="rounded-lg shadow-xl object-cover border-4 border-accent"
-            data-ai-hint="man developer thinking professional illustration"
+            className="rounded-lg shadow-xl object-cover border-4 border-accent dark:border-accent/50"
           />
         </div>
 
@@ -70,7 +69,7 @@ export default function AboutPage() {
       </div>
 
       <section className="py-12 mt-12 relative z-10">
-         <DecorativeBlob pathD={blobPath2} className="top-1/2 left-1/2 w-2/3 h-2/3 opacity-05 transform -translate-x-1/2 -translate-y-1/2 rotate-15" />
+         <DecorativeBlob pathD={blobPath2} className="top-1/2 left-1/2 w-2/3 h-2/3 opacity-05 dark:opacity-0 transform -translate-x-1/2 -translate-y-1/2 rotate-15" />
         <h3 className="font-headline text-2xl text-primary mb-6 text-center flex items-center justify-center">
           <Sparkles className="mr-2 h-7 w-7 text-accent-foreground" /> My Current Skillset
         </h3>

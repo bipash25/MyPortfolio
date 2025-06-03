@@ -74,19 +74,18 @@ const projects = [
 export default function ProjectsPage() {
   return (
     <PageWrapper className="relative overflow-hidden">
-      <DecorativeBlob pathD={blobPath1} className="top-0 -right-1/4 w-96 h-96 opacity-15 transform rotate-120" />
-      <DecorativeBlob pathD={blobPath2} className="bottom-10 -left-1/3 w-[500px] h-[500px] opacity-10 transform -rotate-45" />
+      <DecorativeBlob pathD={blobPath1} className="top-0 -right-1/4 w-96 h-96 opacity-15 dark:opacity-10 transform rotate-120" />
+      <DecorativeBlob pathD={blobPath2} className="bottom-10 -left-1/3 w-[500px] h-[500px] opacity-10 dark:opacity-5 transform -rotate-45" />
       
       <SectionTitle title="My Projects" subtitle="A Showcase of My Learning and Passion" />
       
       <div className="mb-12 text-center">
         <Image 
-          src="https://placehold.co/700x350.png"
+          src="/assets/illustrations/Coding-bro.svg" 
           alt="Projects Showcase Illustration"
-          width={700}
-          height={350}
-          className="rounded-lg mx-auto shadow-xl object-cover"
-          data-ai-hint="projects organization planning"
+          width={500}
+          height={300}
+          className="rounded-lg mx-auto shadow-xl object-contain"
         />
       </div>
 
@@ -112,7 +111,7 @@ export default function ProjectsPage() {
               </div>
               <CardDescription className="text-muted-foreground text-sm leading-relaxed line-clamp-4">{project.description}</CardDescription>
             </CardContent>
-            <CardFooter className="p-6 bg-secondary/20 flex flex-wrap justify-between items-center gap-2">
+            <CardFooter className="p-6 bg-secondary/20 dark:bg-secondary/10 flex flex-wrap justify-between items-center gap-2">
               {project.liveLink && project.liveLink !== '#' ? (
                 <Button asChild size="sm" className="shadow hover:shadow-md transition-shadow">
                   <Link href={project.liveLink} target="_blank" rel="noopener noreferrer">

@@ -37,9 +37,23 @@ export default function GuestbookPage() {
 
   useEffect(() => {
     // Simulate fetching entries
-    const storedEntries = localStorage.getItem('guestbookEntries');
-    if (storedEntries) {
-      setEntries(JSON.parse(storedEntries).map((e: any) => ({...e, timestamp: new Date(e.timestamp)})));
+    let storedEntriesData = null;
+    if (typeof window !== 'undefined') {
+        storedEntriesData = localStorage.getItem('guestbookEntries');
+    }
+    
+    if (storedEntriesData) {
+      try {
+        const parsedEntries = JSON.parse(storedEntriesData);
+        if (Array.isArray(parsedEntries)) {
+            setEntries(parsedEntries.map((e: any) => ({...e, timestamp: new Date(e.timestamp)})));
+        } else {
+            setEntries(generateInitialEntries());
+        }
+      } catch (error) {
+        console.error("Failed to parse guestbook entries from localStorage", error);
+        setEntries(generateInitialEntries());
+      }
     } else {
       setEntries(generateInitialEntries());
     }
@@ -48,26 +62,27 @@ export default function GuestbookPage() {
   const handleAddEntry = (newEntry: GuestbookEntry) => {
     setEntries((prevEntries) => {
       const updatedEntries = [newEntry, ...prevEntries];
-      localStorage.setItem('guestbookEntries', JSON.stringify(updatedEntries));
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('guestbookEntries', JSON.stringify(updatedEntries));
+      }
       return updatedEntries;
     });
   };
 
   return (
     <PageWrapper className="relative overflow-hidden">
-      <DecorativeBlob pathD={blobPath2} className="top-10 -left-1/3 w-[600px] h-[600px] opacity-10 transform -rotate-30" />
-      <DecorativeBlob pathD={blobPath3} className="bottom-20 -right-1/4 w-[500px] h-[500px] opacity-05 transform rotate-45" />
+      <DecorativeBlob pathD={blobPath2} className="top-10 -left-1/3 w-[600px] h-[600px] opacity-10 dark:opacity-5 transform -rotate-30" />
+      <DecorativeBlob pathD={blobPath3} className="bottom-20 -right-1/4 w-[500px] h-[500px] opacity-05 dark:opacity-0 transform rotate-45" />
 
       <SectionTitle title="Guestbook" subtitle="Leave a message, share your thoughts, or just say hello!" />
       
       <div className="mb-12 text-center">
         <Image 
-          src="https://placehold.co/500x300.png"
+          src="/assets/illustrations/Questions-bro.svg" 
           alt="Guestbook Illustration"
-          width={500}
-          height={300}
-          className="rounded-lg mx-auto shadow-xl object-cover"
-          data-ai-hint="guestbook messages feedback community"
+          width={400}
+          height={280}
+          className="rounded-lg mx-auto shadow-xl object-contain"
         />
       </div>
 

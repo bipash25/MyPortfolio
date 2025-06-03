@@ -54,19 +54,18 @@ const blogPosts = [
 export default function BlogPage() {
   return (
     <PageWrapper className="relative overflow-hidden">
-      <DecorativeBlob pathD={blobPath3} className="top-20 -left-1/4 w-[600px] h-[600px] opacity-10 transform rotate-30" />
-      <DecorativeBlob pathD={blobPath1} className="bottom-10 -right-1/3 w-[500px] h-[500px] opacity-05 transform -rotate-60" />
+      <DecorativeBlob pathD={blobPath3} className="top-20 -left-1/4 w-[600px] h-[600px] opacity-10 dark:opacity-5 transform rotate-30" />
+      <DecorativeBlob pathD={blobPath1} className="bottom-10 -right-1/3 w-[500px] h-[500px] opacity-05 dark:opacity-0 transform -rotate-60" />
 
       <SectionTitle title="My Blog" subtitle="Sharing My Learning Journey and Tech Discoveries" />
 
       <div className="mb-12 text-center">
         <Image 
-          src="https://placehold.co/700x350.png"
+          src="/assets/illustrations/Coding-bro.svg" 
           alt="Blog Writing Illustration"
-          width={700}
-          height={350}
-          className="rounded-lg mx-auto shadow-xl object-cover"
-          data-ai-hint="blog writing content creation"
+          width={500}
+          height={300}
+          className="rounded-lg mx-auto shadow-xl object-contain"
         />
       </div>
       
@@ -101,7 +100,7 @@ export default function BlogPage() {
                 ))}
               </div>
             </CardContent>
-            <CardFooter className="p-6 bg-secondary/20">
+            <CardFooter className="p-6 bg-secondary/20 dark:bg-secondary/10">
               <Button asChild variant="default" size="sm" className="shadow hover:shadow-md transition-shadow w-full">
                 <Link href={`/blog/${post.id}`}>
                   Read More <ArrowRight className="ml-2 h-4 w-4" />

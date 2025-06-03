@@ -52,19 +52,18 @@ const socialLinks = [
 export default function ContactPage() {
   return (
     <PageWrapper className="relative overflow-hidden">
-      <DecorativeBlob pathD={blobPath1} className="top-0 -left-1/4 w-96 h-96 opacity-15 transform -rotate-45" />
-      <DecorativeBlob pathD={blobPath2} className="bottom-0 -right-1/4 w-80 h-80 opacity-10 transform rotate-30" />
+      <DecorativeBlob pathD={blobPath1} className="top-0 -left-1/4 w-96 h-96 opacity-15 dark:opacity-10 transform -rotate-45" />
+      <DecorativeBlob pathD={blobPath2} className="bottom-0 -right-1/4 w-80 h-80 opacity-10 dark:opacity-5 transform rotate-30" />
 
       <SectionTitle title="Get In Touch" subtitle="I'd love to hear from you! Whether you have a question, an idea for collaboration, or just want to connect." />
       
       <div className="mb-12 text-center">
         <Image 
-          src="https://placehold.co/500x350.png"
+          src="/assets/illustrations/Questions-bro.svg" 
           alt="Contact Illustration"
-          width={500}
-          height={350}
-          className="rounded-lg mx-auto shadow-xl object-cover"
-          data-ai-hint="contact communication mail"
+          width={450}
+          height={300}
+          className="rounded-lg mx-auto shadow-xl object-contain"
         />
       </div>
 

@@ -10,8 +10,8 @@ import { Frown } from 'lucide-react';
 export default function NotFound() {
   return (
     <PageWrapper className="relative overflow-hidden min-h-[calc(100vh-12rem)] flex flex-col items-center justify-center">
-      <DecorativeBlob pathD={blobPath1} className="top-0 left-0 w-96 h-96 opacity-20 transform -translate-x-1/4 -translate-y-1/4" />
-      <DecorativeBlob pathD={blobPath2} className="bottom-0 right-0 w-80 h-80 opacity-10 transform translate-x-1/4 translate-y-1/4" />
+      <DecorativeBlob pathD={blobPath1} className="top-0 left-0 w-96 h-96 opacity-20 dark:opacity-10 transform -translate-x-1/4 -translate-y-1/4" />
+      <DecorativeBlob pathD={blobPath2} className="bottom-0 right-0 w-80 h-80 opacity-10 dark:opacity-5 transform translate-x-1/4 translate-y-1/4" />
       
       <div className="text-center z-10">
         <Frown className="mx-auto h-24 w-24 text-primary mb-6" />
@@ -26,8 +26,8 @@ export default function NotFound() {
           alt="Lost and Confused"
           width={500}
           height={300}
-          className="rounded-lg mx-auto my-8 shadow-xl"
-          data-ai-hint="confused robot lost"
+          className="rounded-lg mx-auto my-8 shadow-xl object-contain"
+          data-ai-hint="confused robot lost illustration"
         />
         <p className="mb-8 text-muted-foreground">
           It might have been moved, or maybe you typed the address incorrectly.
