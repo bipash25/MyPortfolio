@@ -43,9 +43,10 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 max-w-screen-xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-2 group">
-          <CodeXml className="h-7 w-7 text-primary transition-transform group-hover:rotate-[5deg]" /> 
-          <span className="font-headline text-xl font-bold text-primary">BIPRODEEP</span> 
+        <Link href="/" className="flex items-center group">
+          {/* <CodeXml className="h-7 w-7 text-primary transition-transform group-hover:rotate-[5deg]" />  */}
+          <span className="font-headline text-2xl font-bold">BIPRO</span> 
+          <span className="font-headline text-xl font-bold text-primary">.</span> 
         </Link>
         
         <div className="hidden md:flex items-center gap-x-6 lg:gap-x-8">
@@ -72,7 +73,7 @@ export function Navbar() {
               <div className="p-4">
                 <Link href="/" className="mb-8 flex items-center gap-2 group">
                   <CodeXml className="h-7 w-7 text-primary" />
-                  <span className="font-headline text-xl font-bold text-primary">BIPRODEEP</span>
+                  <span className="font-headline text-xl font-bold text-primary">BIPRO</span>
                 </Link>
                 <NavLinks mobile />
                  <Button asChild size="lg" className="w-full mt-8 shadow-md hover:shadow-lg transition-shadow bg-primary text-primary-foreground hover:bg-primary/90 rounded-md">

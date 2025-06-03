@@ -1,3 +1,4 @@
+
 "use client";
 
 import type { GuestbookEntry } from '@/types';
@@ -11,16 +12,22 @@ interface GuestbookListProps {
 
 export function GuestbookList({ entries }: GuestbookListProps) {
   if (entries.length === 0) {
-    return <p className="text-center text-muted-foreground mt-8">No entries yet. Be the first to sign!</p>;
+    return (
+      <Card className="bg-card shadow-md">
+        <CardContent className="p-6 text-center">
+          <p className="text-muted-foreground mt-8">No entries yet. Be the first to sign!</p>
+        </CardContent>
+      </Card>
+    );
   }
 
   return (
     <div className="space-y-6 mt-8">
       {entries.map((entry) => (
-        <Card key={entry.id} className="shadow-lg hover:shadow-xl transition-shadow duration-300">
+        <Card key={entry.id} className="shadow-lg hover:shadow-xl transition-shadow duration-300 bg-card">
           <CardHeader className="flex flex-row items-center gap-4 p-4">
             <Avatar>
-              <AvatarImage src={`https://placehold.co/40x40.png?text=${entry.name.charAt(0)}`} alt={entry.name} data-ai-hint="letter avatar" />
+              <AvatarImage src={`https://placehold.co/40x40.png?text=${entry.name.charAt(0)}`} alt={entry.name} data-ai-hint="avatar initial letter" />
               <AvatarFallback>{entry.name.charAt(0).toUpperCase()}</AvatarFallback>
             </Avatar>
             <CardTitle className="font-headline text-lg text-primary">{entry.name}</CardTitle>

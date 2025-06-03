@@ -1,4 +1,5 @@
-import { Github, Linkedin, Mail } from 'lucide-react';
+
+import { Github, Instagram, Mail, Twitter } from 'lucide-react';
 import Link from 'next/link';
 
 export function Footer() {
@@ -9,14 +10,17 @@ export function Footer() {
           &copy; {new Date().getFullYear()} Biprodeep Nath. All rights reserved.
         </p>
         <div className="flex items-center gap-4">
-          <Link href="mailto:biprodeep.nath@example.com" aria-label="Email Biprodeep" className="text-muted-foreground hover:text-primary transition-colors">
+          <Link href="mailto:secondbipro@gmail.com" aria-label="Email Biprodeep" className="text-muted-foreground hover:text-primary transition-colors">
             <Mail className="h-5 w-5" />
           </Link>
-          <Link href="https://github.com/biprodeep" target="_blank" rel="noopener noreferrer" aria-label="Biprodeep's GitHub" className="text-muted-foreground hover:text-primary transition-colors">
+          <Link href="https://github.com/bipash25" target="_blank" rel="noopener noreferrer" aria-label="Biprodeep's GitHub" className="text-muted-foreground hover:text-primary transition-colors">
             <Github className="h-5 w-5" />
           </Link>
-          <Link href="https://linkedin.com/in/biprodeep" target="_blank" rel="noopener noreferrer" aria-label="Biprodeep's LinkedIn" className="text-muted-foreground hover:text-primary transition-colors">
-            <Linkedin className="h-5 w-5" />
+          <Link href="https://instagram.com/the.bipro" target="_blank" rel="noopener noreferrer" aria-label="Biprodeep's Instagram" className="text-muted-foreground hover:text-primary transition-colors">
+            <Instagram className="h-5 w-5" />
+          </Link>
+          <Link href="https://x.com/the_bipro" target="_blank" rel="noopener noreferrer" aria-label="Biprodeep's Twitter / X" className="text-muted-foreground hover:text-primary transition-colors">
+            <Twitter className="h-5 w-5" />
           </Link>
         </div>
       </div>

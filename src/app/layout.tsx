@@ -5,7 +5,7 @@ import { Footer } from '@/components/shared/footer';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: "Biprodeep Nath's Portfolio", 
+  title: "BIPRO's Portfolio", 
   description: 'Portfolio of Biprodeep Nath, an aspiring software developer and tech enthusiast.', 
 };
 

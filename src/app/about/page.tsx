@@ -1,8 +1,10 @@
+
 import Image from 'next/image';
 import { PageWrapper } from '@/components/shared/page-wrapper';
 import { SectionTitle } from '@/components/shared/section-title';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { GraduationCap, Heart, Lightbulb, MapPinned, Sparkles, LaptopCode, Brain } from 'lucide-react';
+import { DecorativeBlob, blobPath1, blobPath2, blobPath3 } from '@/components/shared/decorative-blob';
 
 const skills = [
   { name: 'JavaScript (ES6+)', level: 75 },
@@ -17,26 +19,29 @@ const skills = [
 
 export default function AboutPage() {
   return (
-    <PageWrapper>
+    <PageWrapper className="relative overflow-hidden">
+      <DecorativeBlob pathD={blobPath1} className="top-0 -left-1/4 w-96 h-96 opacity-15 transform rotate-45" />
+      <DecorativeBlob pathD={blobPath3} className="bottom-0 -right-1/4 w-80 h-80 opacity-10 transform -rotate-30" />
+
       <SectionTitle title="About Me" subtitle="My Story, Skills, and Aspirations" />
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start mb-12 relative z-10">
         <div className="md:col-span-1 flex justify-center">
           <Image
-            src="https://placehold.co/300x400.png"
+            src="/assets/illustrations/about-me-illustration.svg" 
             alt="Biprodeep Nath - Aspiring Developer"
             width={300}
             height={400}
             className="rounded-lg shadow-xl object-cover border-4 border-accent"
-            data-ai-hint="man developer portrait professional"
+            data-ai-hint="man developer thinking professional illustration"
           />
         </div>
 
         <div className="md:col-span-2 space-y-8">
-          <Card className="shadow-lg">
+          <Card className="shadow-lg bg-card">
             <CardHeader>
               <CardTitle className="font-headline text-2xl text-primary flex items-center">
-                <Lightbulb className="mr-2 h-6 w-6 text-[#D0BFFF]" /> My Spark
+                <Lightbulb className="mr-2 h-6 w-6 text-accent-foreground" /> My Spark
               </CardTitle>
             </CardHeader>
             <CardContent className="text-muted-foreground space-y-4">
@@ -49,10 +54,10 @@ export default function AboutPage() {
             </CardContent>
           </Card>
 
-          <Card className="shadow-lg">
+          <Card className="shadow-lg bg-card">
             <CardHeader>
               <CardTitle className="font-headline text-2xl text-primary flex items-center">
-                <MapPinned className="mr-2 h-6 w-6 text-[#D0BFFF]" /> My Learning Journey
+                <MapPinned className="mr-2 h-6 w-6 text-accent-foreground" /> My Learning Journey
               </CardTitle>
             </CardHeader>
             <CardContent className="text-muted-foreground">
@@ -64,13 +69,14 @@ export default function AboutPage() {
         </div>
       </div>
 
-      <section className="py-12 mt-12">
+      <section className="py-12 mt-12 relative z-10">
+         <DecorativeBlob pathD={blobPath2} className="top-1/2 left-1/2 w-2/3 h-2/3 opacity-05 transform -translate-x-1/2 -translate-y-1/2 rotate-15" />
         <h3 className="font-headline text-2xl text-primary mb-6 text-center flex items-center justify-center">
-          <Sparkles className="mr-2 h-7 w-7 text-[#D0BFFF]" /> My Current Skillset
+          <Sparkles className="mr-2 h-7 w-7 text-accent-foreground" /> My Current Skillset
         </h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {skills.map((skill) => (
-            <Card key={skill.name} className="shadow-md hover:shadow-lg transition-shadow">
+            <Card key={skill.name} className="shadow-md hover:shadow-lg transition-shadow bg-card">
               <CardContent className="p-6">
                 <h4 className="font-semibold text-lg text-foreground mb-2">{skill.name}</h4>
                 <div className="w-full bg-muted rounded-full h-2.5">
@@ -80,6 +86,8 @@ export default function AboutPage() {
                     aria-valuenow={skill.level}
                     aria-valuemin={0}
                     aria-valuemax={100}
+                    role="progressbar"
+                    aria-label={`${skill.name} proficiency: ${skill.level}%`}
                   ></div>
                 </div>
               </CardContent>
@@ -88,11 +96,11 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="py-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-        <Card className="shadow-lg">
+      <section className="py-12 grid grid-cols-1 md:grid-cols-2 gap-8 relative z-10">
+        <Card className="shadow-lg bg-card">
           <CardHeader>
             <CardTitle className="font-headline text-2xl text-primary flex items-center">
-              <GraduationCap className="mr-2 h-6 w-6 text-[#D0BFFF]" /> Education
+              <GraduationCap className="mr-2 h-6 w-6 text-accent-foreground" /> Education
             </CardTitle>
           </CardHeader>
           <CardContent className="text-muted-foreground">
@@ -104,10 +112,10 @@ export default function AboutPage() {
           </CardContent>
         </Card>
 
-        <Card className="shadow-lg">
+        <Card className="shadow-lg bg-card">
           <CardHeader>
             <CardTitle className="font-headline text-2xl text-primary flex items-center">
-              <Heart className="mr-2 h-6 w-6 text-[#D0BFFF]" /> Interests & Hobbies
+              <Heart className="mr-2 h-6 w-6 text-accent-foreground" /> Interests & Hobbies
             </CardTitle>
           </CardHeader>
           <CardContent className="text-muted-foreground">

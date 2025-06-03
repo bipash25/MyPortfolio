@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { PageWrapper } from '@/components/shared/page-wrapper';
@@ -5,6 +6,7 @@ import { SectionTitle } from '@/components/shared/section-title';
 import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Github } from 'lucide-react';
+import { DecorativeBlob, blobPath1, blobPath2, blobPath3 } from '@/components/shared/decorative-blob';
 
 const projects = [
   {
@@ -14,8 +16,8 @@ const projects = [
     imageUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'online shopping interface',
     tags: ['Next.js', 'React', 'Tailwind CSS', 'Learning Project'],
-    liveLink: '#', // Placeholder, update if you deploy
-    repoLink: 'https://github.com/biprodeep/shopsphere-concept', // Example, update to actual repo
+    liveLink: '#', 
+    repoLink: 'https://github.com/bipash25/shopsphere-concept', 
   },
   {
     id: 'project-2',
@@ -25,7 +27,7 @@ const projects = [
     dataAiHint: 'task manager app',
     tags: ['React', 'Firebase (Learning)', 'PWA Concept', 'Personal Project'],
     liveLink: '#',
-    repoLink: 'https://github.com/biprodeep/taskflow-idea',
+    repoLink: 'https://github.com/bipash25/taskflow-idea',
   },
   {
     id: 'project-3',
@@ -34,8 +36,8 @@ const projects = [
     imageUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'developer portfolio website',
     tags: ['Next.js', 'Tailwind CSS', 'ShadCN UI', 'TypeScript'],
-    liveLink: '/', // Current site
-    repoLink: 'https://github.com/biprodeep/my-portfolio', // Example, update to actual repo
+    liveLink: '/', 
+    repoLink: 'https://github.com/bipash25/my-portfolio', 
   },
   {
     id: 'project-4',
@@ -45,7 +47,7 @@ const projects = [
     dataAiHint: 'food recipe ai',
     tags: ['Python', 'Flask', 'React', 'AI/ML (Exploring)'],
     liveLink: '#',
-    repoLink: 'https://github.com/biprodeep/culinary-companion',
+    repoLink: 'https://github.com/bipash25/culinary-companion',
   },
   {
     id: 'project-5',
@@ -55,7 +57,7 @@ const projects = [
     dataAiHint: 'weather app interface',
     tags: ['JavaScript', 'HTML', 'CSS', 'API Integration'],
     liveLink: '#',
-    repoLink: 'https://github.com/biprodeep/atmocheck-js',
+    repoLink: 'https://github.com/bipash25/atmocheck-js',
   },
    {
     id: 'project-6',
@@ -65,23 +67,38 @@ const projects = [
     dataAiHint: 'data charts graph',
     tags: ['D3.js', 'JavaScript', 'Data Visualization', 'Study Project'],
     liveLink: '#',
-    repoLink: 'https://github.com/biprodeep/dataviz-study',
+    repoLink: 'https://github.com/bipash25/dataviz-study',
   },
 ];
 
 export default function ProjectsPage() {
   return (
-    <PageWrapper>
+    <PageWrapper className="relative overflow-hidden">
+      <DecorativeBlob pathD={blobPath1} className="top-0 -right-1/4 w-96 h-96 opacity-15 transform rotate-120" />
+      <DecorativeBlob pathD={blobPath2} className="bottom-10 -left-1/3 w-[500px] h-[500px] opacity-10 transform -rotate-45" />
+      
       <SectionTitle title="My Projects" subtitle="A Showcase of My Learning and Passion" />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      
+      <div className="mb-12 text-center">
+        <Image 
+          src="https://placehold.co/700x350.png"
+          alt="Projects Showcase Illustration"
+          width={700}
+          height={350}
+          className="rounded-lg mx-auto shadow-xl object-cover"
+          data-ai-hint="projects organization planning"
+        />
+      </div>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative z-10">
         {projects.map((project) => (
-          <Card key={project.id} id={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+          <Card key={project.id} id={project.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 bg-card">
             <CardHeader className="p-0">
               <Image
                 src={project.imageUrl}
                 alt={project.title}
                 width={600}
-                height={400}
+                height={300} 
                 className="w-full h-56 object-cover"
                 data-ai-hint={project.dataAiHint}
               />
@@ -93,16 +110,16 @@ export default function ProjectsPage() {
                   <span key={tag} className="text-xs bg-accent text-accent-foreground px-2 py-1 rounded-full">{tag}</span>
                 ))}
               </div>
-              <CardDescription className="text-muted-foreground text-sm leading-relaxed">{project.description}</CardDescription>
+              <CardDescription className="text-muted-foreground text-sm leading-relaxed line-clamp-4">{project.description}</CardDescription>
             </CardContent>
-            <CardFooter className="p-6 bg-secondary/20 flex justify-between items-center">
+            <CardFooter className="p-6 bg-secondary/20 flex flex-wrap justify-between items-center gap-2">
               {project.liveLink && project.liveLink !== '#' ? (
                 <Button asChild size="sm" className="shadow hover:shadow-md transition-shadow">
                   <Link href={project.liveLink} target="_blank" rel="noopener noreferrer">
                     View Live <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
-              ) : ( <div /> /* Empty div to maintain spacing if no live link */)}
+              ) : ( <div className="w-0 h-0" /> /* Empty div to maintain spacing if no live link */)}
               {project.repoLink && (
                  <Button asChild variant="outline" size="sm" className="shadow hover:shadow-md transition-shadow">
                   <Link href={project.repoLink} target="_blank" rel="noopener noreferrer">

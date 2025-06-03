@@ -1,22 +1,13 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { PageWrapper } from '@/components/shared/page-wrapper';
 import { ContactForm } from '@/components/contact/contact-form';
-import { Github, Linkedin, Mail, TerminalSquare, CodeXml, CheckCircle2, BookOpen, Brain, Lightbulb, ArrowRight, MonitorSmartphone, Database, Palette } from 'lucide-react';
+import { Github, Instagram, Mail, TerminalSquare, CodeXml, CheckCircle2, BookOpen, Brain, Lightbulb, ArrowRight, MonitorSmartphone, Database } from 'lucide-react';
 import { cn } from '@/lib/utils';
-
-// Simple inline SVG for decorative blobs
-const DecorativeBlob = ({ className, pathD, style }: { className?: string, pathD: string, style?: React.CSSProperties }) => (
-  <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" className={cn("absolute -z-10 opacity-50", className)} style={style}>
-    <path fill="hsl(var(--accent))" d={pathD} transform="translate(100 100) scale(1.5)"></path>
-  </svg>
-);
-
-const blobPath1 = "M48.4,-59.8C62.9,-48.9,75.1,-33.9,79.7,-16.7C84.4,0.5,81.5,20,70.9,34.8C60.3,49.5,42.1,59.5,24.9,66.1C7.8,72.7,-8.2,75.9,-22.9,70.7C-37.5,65.5,-50.8,51.9,-59.3,36.7C-67.8,21.5,-71.6,4.8,-68.7,-10.7C-65.9,-26.1,-56.4,-40.3,-43.8,-51.3C-31.2,-62.3,-15.6,-70.1,0.9,-71.1C17.4,-72.1,34,-66.6,48.4,-59.8Z";
-const blobPath2 = "M51.4,-47.9C64.8,-37.3,72.7,-18.7,70.9,-1.7C69.1,15.3,57.6,30.6,43.8,43.3C30,56,15,66.2,-2.2,68.1C-19.4,70,-38.9,63.7,-51.2,50.5C-63.5,37.3,-68.7,17.1,-65.8,-2.2C-62.9,-21.5,-51.9,-39.9,-37.6,-50.2C-23.3,-60.5,-11.6,-62.7,3.1,-60.1C17.8,-57.5,37.9,-58.5,51.4,-47.9Z";
-const blobPath3 = "M39.5,-48.2C53.7,-42.4,69.3,-33,75.3,-19.6C81.3,-6.2,77.7,11.2,68.7,23.7C59.7,36.2,45.3,43.8,31.2,52.4C17.1,61,-6.7,70.6,-27.1,66.2C-47.5,61.8,-64.4,43.5,-71.2,23.4C-78,-6.7,-74.6,-28.5,-62.3,-40.3C-50,-52.1,-29.7,-53.9,-13.1,-53.2C3.5,-52.5,20,-48.2,39.5,-48.2Z";
+import { DecorativeBlob, blobPath1, blobPath2, blobPath3 } from '@/components/shared/decorative-blob';
 
 
 export default function HomePage() {
@@ -25,14 +16,16 @@ export default function HomePage() {
       <DecorativeBlob pathD={blobPath1} className="top-0 left-0 w-64 h-64 md:w-96 md:h-96 opacity-30" style={{ transform: 'translate(-30%, -30%) rotate(45deg)' }} />
       <DecorativeBlob pathD={blobPath2} className="bottom-0 right-0 w-56 h-56 md:w-80 md:h-80 opacity-20" style={{ transform: 'translate(30%, 30%) rotate(-30deg)' }} />
       
-      <section className="relative py-20 md:py-32">
+      <section className="relative py-16 md:py-28">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
           <div className="text-center md:text-left animate-fadeIn">
-            <p className="text-primary font-semibold mb-2 text-sm">HI!</p>
+            <p className="text-primary font-semibold mb-2 text-xl">HI!</p>
             <h1 className="font-headline text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-foreground">
-              I'M <span className="text-primary">BIPRODEEP</span><br />
-              ASPIRING SOFTWARE DEVELOPER
+              I'M <span className="text-primary">BIPRODEEP</span>
             </h1>
+            <h2 className="font-headline text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-foreground/80 mt-1">
+            AN ASPIRING SOFTWARE DEVELOPER
+            </h2>
             <p className="mt-6 text-lg text-muted-foreground max-w-xl mx-auto md:mx-0">
               A passionate student developer exploring the world of technology, one line of code at a time. My goal is to build intuitive and impactful digital experiences.
             </p>
@@ -44,11 +37,11 @@ export default function HomePage() {
           </div>
           <div className="relative animate-fadeIn" style={{animationDelay: '0.2s'}}>
             <Image
-              src="https://placehold.co/600x500.png"
-              alt="Biprodeep Nath - Aspiring Software Developer"
+              src="/assets/illustrations/Coding-bro.svg"
+              alt="Biprodeep Nath - Aspiring Software Developer Illustration"
               width={600}
               height={500}
-              className="rounded-lg shadow-xl mx-auto"
+              className="rounded-lg mx-auto"
               data-ai-hint="man laptop code professional illustration"
               priority
             />
@@ -72,15 +65,15 @@ export default function HomePage() {
               <div>
                 <h3 className="font-semibold text-sm text-muted-foreground mb-1">Connect With Me</h3>
                 <div className="flex justify-center md:justify-start gap-3 text-foreground">
-                  <Link href="https://github.com/biprodeep" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Github className="h-6 w-6 hover:text-primary transition-colors" /></Link>
-                  <Link href="https://linkedin.com/in/biprodeep" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><Linkedin className="h-6 w-6 hover:text-primary transition-colors" /></Link>
+                  <Link href="https://github.com/bipash25" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><Github className="h-6 w-6 hover:text-primary transition-colors" /></Link>
+                  <Link href="https://instagram.com/the.bipro" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><Instagram className="h-6 w-6 hover:text-primary transition-colors" /></Link>
                   <Link href="/blog" aria-label="My Blog"><BookOpen className="h-6 w-6 hover:text-primary transition-colors" /></Link>
                 </div>
               </div>
               <div>
                 <h3 className="font-semibold text-sm text-muted-foreground mb-1">Contact me</h3>
-                <Link href="mailto:biprodeep.nath@example.com" className="flex items-center justify-center md:justify-start gap-1 text-foreground hover:text-primary transition-colors text-sm">
-                  <Mail className="h-5 w-5" /> biprodeep.nath@example.com
+                <Link href="mailto:secondbipro@gmail.com" className="flex items-center justify-center md:justify-start gap-1 text-foreground hover:text-primary transition-colors text-sm">
+                  <Mail className="h-5 w-5" /> secondbipro@gmail.com
                 </Link>
               </div>
             </div>
@@ -95,11 +88,11 @@ export default function HomePage() {
           <div className="relative order-2 md:order-1 animate-fadeIn">
              <DecorativeBlob pathD={blobPath3} className="top-0 left-0 w-full h-full opacity-20" style={{transform: 'scale(1.2) translate(-10%, -10%)'}}/>
             <Image
-              src="https://placehold.co/500x600.png"
-              alt="About Biprodeep"
+              src="/assets/illustrations/Questions-bro.svg"
+              alt="About Biprodeep - Illustration of a man thinking"
               width={500}
               height={600}
-              className="rounded-lg shadow-xl mx-auto object-cover"
+              className="rounded-lg mx-auto object-cover"
               data-ai-hint="man thinking code illustration"
             />
           </div>
@@ -156,6 +149,7 @@ export default function HomePage() {
 
       <section className="py-16 md:py-24 relative overflow-hidden">
         <DecorativeBlob pathD={blobPath3} className="top-1/4 -left-24 w-96 h-96 opacity-10 transform rotate-120" />
+        <DecorativeBlob pathD={blobPath1} className="bottom-1/4 -right-24 w-80 h-80 opacity-15 transform -rotate-120" />
         <div className="container mx-auto px-4 text-center">
           <p className="text-primary font-semibold text-sm mb-1">PORTFOLIO</p>
           <h2 className="font-headline text-3xl md:text-4xl font-bold text-foreground mb-12">
@@ -183,7 +177,7 @@ export default function HomePage() {
         </div>
       </section>
       
-      <section className="py-16 md:py-24 relative overflow-hidden">
+      <section className="py-16 md:py-24 relative overflow-hidden bg-secondary/30">
         <DecorativeBlob pathD={blobPath2} className="top-10 -left-24 w-96 h-96 opacity-10 transform -rotate-30 scale-x-[-1]" />
         <DecorativeBlob pathD={blobPath3} className="bottom-0 -right-20 w-80 h-80 opacity-10 transform rotate-60" />
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-start">
@@ -196,11 +190,10 @@ export default function HomePage() {
               Interested in collaborating, have a question, or just want to connect? Feel free to reach out. I'm always open to discussing new ideas and opportunities.
             </p>
              <div className="space-y-4 text-muted-foreground">
-                <p><strong>Email:</strong> <a href="mailto:biprodeep.nath@example.com" className="text-primary hover:underline">biprodeep.nath@example.com</a></p>
-                <p><strong>Phone:</strong> +1 (555) 123-4567 (Optional)</p>
+                <p><strong>Email:</strong> <a href="mailto:secondbipro@gmail.com" className="text-primary hover:underline">secondbipro@gmail.com</a></p>
              </div>
           </div>
-          <Card className="p-6 md:p-8 shadow-xl rounded-xl animate-fadeIn" style={{animationDelay: '0.2s'}}>
+          <Card className="p-6 md:p-8 shadow-xl rounded-xl animate-fadeIn bg-card" style={{animationDelay: '0.2s'}}>
             <ContactForm />
           </Card>
         </div>
